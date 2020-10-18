@@ -39,17 +39,5 @@ func main() {
 	encText := e.Code(data)
 	ioutil.WriteFile(out, encText, 0666)
 
-	// e2 := NewEnigma("")
-
-	// for i := 0; i < RotorCount; i++ {
-	// 	cnt := 0
-	// 	for k, v := range e2.rotors[i].ring {
-	// 		if k == v {
-	// 			cnt++
-	// 		}
-	// 	}
-	// 	fmt.Println(Length-cnt, cnt)
-	// }
-
 	fmt.Println("Successfully done!")
 }
