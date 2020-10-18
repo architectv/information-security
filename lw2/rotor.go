@@ -21,29 +21,14 @@ func makeRotor(settings string) Rotor {
 			r.ring[k], _ = strconv.Atoi(v)
 		}
 	} else {
-		var ring [Length]int
 		for i := 0; i < Length; i++ {
-			ring[i] = i
+			r.ring[i] = i
 		}
 
 		rand.Seed(time.Now().UnixNano())
 		rand.Shuffle(Length, func(i, j int) {
-			ring[i], ring[j] = ring[j], ring[i]
+			r.ring[i], r.ring[j] = r.ring[j], r.ring[i]
 		})
-
-		for i := 0; i < Length; i++ {
-			if ring[ring[i]] != i {
-				tmp := ring[ring[i]]
-				ring[ring[i]] = i
-				for j := 0; j < Length; j++ {
-					if ring[j] == i && ring[i] != j {
-						ring[j] = tmp
-					}
-				}
-			}
-		}
-
-		r.ring = ring
 	}
 
 	return r
