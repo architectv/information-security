@@ -30,7 +30,11 @@ $ ls data
 $ cat data/1.txt
 hello
 $ ./enigma
-Usage: ./enigma input output
+Usage:
+        code:
+                ./enigma input output
+        set new settings:
+                ./enigma set
 $ ./enigma data/1.txt data/2.txt
 Successfully done!
 $ cat data/2.txt

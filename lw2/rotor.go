@@ -53,7 +53,7 @@ func (r *Rotor) getVal(in int) int {
 func (r *Rotor) getKey(val int) int {
 	for i := 0; i < Length; i++ {
 		if r.ring[i] == val {
-			key := (Length + i - r.pos) % Length
+			key := (i - r.pos) % Length
 			return key
 		}
 	}
