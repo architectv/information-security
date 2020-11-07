@@ -6,10 +6,12 @@ import (
 	"log"
 	des "lw3/des"
 	"os"
+	"strings"
 )
 
 const (
-	Key = "config/key.txt"
+	Key  = "config/key.txt"
+	Path = "data/"
 )
 
 func main() {
@@ -31,12 +33,14 @@ func main() {
 		log.Fatal(err)
 	}
 
+	path := strings.Split(inputFile, "/")
+	fileName := path[len(path)-1]
 	encData := desEcb.Encode(data)
-	encFile := inputFile + ".enc"
+	encFile := Path + "enc/" + fileName
 	ioutil.WriteFile(encFile, encData, 0666)
 
 	decData := desEcb.Decode(encData)
-	decFile := inputFile + ".dec"
+	decFile := Path + "dec/" + fileName
 	ioutil.WriteFile(decFile, decData, 0666)
 
 	fmt.Println("Successfully done!")

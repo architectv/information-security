@@ -4,13 +4,13 @@
 
 ### Схема | Schema
 
-![des_schema](data/des_archive/../des_schema_page-0001.jpg)
+![des_schema](data/in/des_schema.jpg)
 
 ### Таблицы | Tables
 
-![des_tables_1](data/des_archive/../des_tables_page-0001.jpg)
+![des_tables](data/in/des_tables.jpg)
 
-![des_tables_2](data/des_archive/../des_tables_page-0002.jpg)
+![des_tables2](data/in/des_tables2.jpg)
 
 ---
 
@@ -37,8 +37,8 @@ qwertyui
 
 ## Дополнительные материалы | Additional materials
 
-<img src="data/des1.png" alt="des1" width="400"/>
+<img src="data/in/des1.png" alt="des1" width="400"/>
 
-<img src="data/des2.png" alt="des2" width="400"/>
+<img src="data/in/des2.png" alt="des2" width="400"/>
 
-<img src="data/des3.png" alt="des3" width="400"/>
+<img src="data/in/des3.png" alt="des3" width="400"/>

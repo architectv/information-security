@@ -1,4 +1,5 @@
 APP=des-ecb
+DATA=data/
 
 build:
 	go build -o $(APP) main.go
@@ -6,4 +7,4 @@ build:
 clean:
 	go clean
 	rm $(APP)
-	rm data/*.enc data/*.dec
+	rm $(DATA)enc/* $(DATA)dec/*

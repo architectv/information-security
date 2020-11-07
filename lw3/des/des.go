@@ -40,7 +40,7 @@ func (des *DES) code(mode byte, text []byte) []byte {
 		encText = append(encText, encBlock...)
 	}
 
-	bytesTrim(&encText)
+	// bytesTrim(&encText)
 
 	return encText
 }
