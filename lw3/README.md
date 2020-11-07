@@ -25,13 +25,13 @@ $ make build
 go build -o des-ecb main.go
 $ ./des-ecb
 Usage: ./des-ecb input_file
-$ ./des-ecb data/1.txt
-Successfully done!
-$ cat data/1.txt
+$ cat data/in/1.txt
 qwertyui
-$ cat data/1.txt.enc
+$ ./des-ecb data/in/1.txt
+Successfully done!
+$ cat data/enc/1.txt
 <encrypted text>
-$ cat data/1.txt.dec
+$ cat data/dec/1.txt
 qwertyui
 ```
 
