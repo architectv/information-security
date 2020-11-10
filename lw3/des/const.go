@@ -2,6 +2,8 @@ package des
 
 const (
 	_RoundCount = 16
+	_EncMode    = 'e'
+	_DecMode    = 'd'
 )
 
 var _Sbox = [8][4][16]byte{

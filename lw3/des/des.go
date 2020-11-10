@@ -12,11 +12,25 @@ func NewDES(keyString string) *DES {
 }
 
 func (des *DES) Encode(text []byte) []byte {
-	return des.code('e', text)
+	length := len(text)
+	lengthBytes := split64bTo8b(uint64(length))
+	encLengthBytes := des.code(_EncMode, lengthBytes)
+
+	encText := des.code(_EncMode, text)
+	encText = append(encText, encLengthBytes...)
+	return encText
 }
 
 func (des *DES) Decode(text []byte) []byte {
-	return des.code('d', text)
+	length := len(text)
+	idxLastBlock := length - 8
+	lengthBlock := text[idxLastBlock:]
+	decLengthBlock := des.code(_DecMode, lengthBlock)
+	decLength := int(join8bTo64b(decLengthBlock))
+
+	decText := des.code(_DecMode, text[:idxLastBlock])
+	decText = decText[:decLength]
+	return decText
 }
 
 func (des *DES) code(mode byte, text []byte) []byte {
@@ -39,8 +53,6 @@ func (des *DES) code(mode byte, text []byte) []byte {
 		encBlock := split64bTo8b(fp)
 		encText = append(encText, encBlock...)
 	}
-
-	// bytesTrim(&encText)
 
 	return encText
 }
