@@ -28,3 +28,13 @@ func join8bTo64b(blocks8b []byte) uint64 {
 	}
 	return block64b
 }
+
+func bytesAlignment(bytes *[]byte) int {
+	length := len(*bytes)
+	if length%8 != 0 {
+		rem := 8 - length%8
+		length += rem
+		*bytes = append(*bytes, make([]byte, rem)...)
+	}
+	return length
+}

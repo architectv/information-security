@@ -35,8 +35,7 @@ func (des *DES) Decode(text []byte) []byte {
 
 func (des *DES) code(mode byte, text []byte) []byte {
 	feistelCipher := feistelCipherMode(mode)
-	bytesAlignment(&text)
-	length := len(text)
+	length := bytesAlignment(&text)
 
 	encText := make([]byte, 0, length)
 	keys48b := des.keyExpansion()

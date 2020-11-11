@@ -3,9 +3,9 @@ package des
 func feistelCipherMode(mode byte) (
 	feistelCipher func(*uint32, *uint32, [_RoundCount]uint64)) {
 	switch mode {
-	case 'e':
+	case _EncMode:
 		feistelCipher = feistelCipherEnc
-	case 'd':
+	case _DecMode:
 		feistelCipher = feistelCipherDec
 	}
 	return
