@@ -5,6 +5,9 @@ import (
 )
 
 func customExtendedGCD(a, b *big.Int) (*big.Int, *big.Int, *big.Int) {
+	if a.Cmp(b) > 0 {
+		a, b = b, a
+	}
 	prevX := big.NewInt(1)
 	x := big.NewInt(0)
 	prevY := big.NewInt(0)
