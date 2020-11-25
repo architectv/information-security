@@ -1,18 +1,6 @@
-# Лабораторная работа 3 | Laboratory work 3
+# Лабораторная работа 4 | Laboratory work 4
 
-## Шифр DES | [Data Encryption Standard (DES)](https://en.wikipedia.org/wiki/Data_Encryption_Standard)
-
-### Схема | Schema
-
-![des_schema](data/in/des_schema.jpg)
-
-### Таблицы | Tables
-
-![des_tables](data/in/des_tables.jpg)
-
-![des_tables2](data/in/des_tables2.jpg)
-
----
+## Шифр RSA | [RSA Cipher](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 
 ## Пример | Example
 
@@ -22,23 +10,17 @@ The [**e**lectronic **c**ode **b**ook mode](https://en.wikipedia.org/wiki/Block_
 
 ```
 $ make build
-go build -o des-ecb main.go
-$ ./des-ecb
-Usage: ./des-ecb input_file
-$ cat data/in/1.txt
+go build -o rsa-ecb main.go
+$ ./rsa-ecb
+Usage: ./rsa-ecb input_file bits
+$ cat data/in/text.txt
 qwertyui
-$ ./des-ecb data/in/1.txt
+$ ./rsa-ecb data/in/text.txt 100
+Encode time: 2.9992ms
+Decode time: 2.9973ms
 Successfully done!
-$ cat data/enc/1.txt
+$ cat data/enc/text.txt
 <encrypted text>
-$ cat data/dec/1.txt
+$ cat data/dec/text.txt
 qwertyui
 ```
-
-## Дополнительные материалы | Additional materials
-
-<img src="data/in/des1.png" alt="des1" width="400"/>
-
-<img src="data/in/des2.png" alt="des2" width="400"/>
-
-<img src="data/in/des3.png" alt="des3" width="400"/>

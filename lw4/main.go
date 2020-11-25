@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	rsa "lw4/rsa"
+	rsa "lw4/rsa/v2"
 	"os"
 	"strconv"
 	"strings"
@@ -35,7 +35,6 @@ func main() {
 		return
 	}
 
-	rsa := rsa.NewRSA(bits)
 	data, err := ioutil.ReadFile(inputFile)
 	if err != nil {
 		log.Fatal(err)
@@ -45,6 +44,8 @@ func main() {
 	fileName := path[len(path)-1]
 
 	log.Printf("INPUT [%s] %d bytes\n", inputFile, len(data))
+
+	rsa := rsa.NewRSA(bits)
 
 	start := time.Now()
 	encData := rsa.Encode(data)

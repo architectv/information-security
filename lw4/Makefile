@@ -1,4 +1,4 @@
-APP=rsa-ecb.out
+APP=rsa-ecb
 DATA=data/
 
 build:
