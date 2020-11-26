@@ -36,6 +36,8 @@ M = C**D mod N
 
 The [**e**lectronic **c**ode **b**ook mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)) is used.
 
+P, Q генерируются размером *bits* бит | P, Q are generated in size *bits* bits.
+
 ```
 $ make build
 go build -o rsa-ecb main.go
