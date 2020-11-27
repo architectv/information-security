@@ -83,8 +83,7 @@ func VerifyFile(fileName string) error {
 		return err
 	}
 
-	keyFile := Path + KeyFolder + fileName + Ext
-	publicKey, err := readPublicKey(keyFile)
+	publicKey, err := readPublicKey(fileName)
 	if err != nil {
 		return err
 	}
@@ -100,7 +99,8 @@ func writePublicKey(fileName string, publicKey *rsa.PublicKey) error {
 	return err
 }
 
-func readPublicKey(keyFile string) (*rsa.PublicKey, error) {
+func readPublicKey(fileName string) (*rsa.PublicKey, error) {
+	keyFile := Path + KeyFolder + fileName + Ext
 	keyData, err := ioutil.ReadFile(keyFile)
 	if err != nil {
 		return nil, err
