@@ -7,7 +7,7 @@
 |:three:|[**Шифр DES** (DES Cipher)*](https://github.com/architectv/information-security/tree/main/lw3)|:heavy_check_mark:|
 |:three:|[**Шифр AES** (AES Cipher)*](https://github.com/architectv/information-security/tree/main/)|:white_circle:|
 |:four:|[**Шифр RSA** (RSA Cipher)](https://github.com/architectv/information-security/tree/main/lw4)|:heavy_check_mark:|
-|:five:|[**Электронная подпись** (Electronic signature)](https://github.com/architectv/information-security/tree/main/)|:o:|
+|:five:|[**Электронная подпись** (Digital signature)](https://github.com/architectv/information-security/tree/main/lw5)|:heavy_check_mark:|
 |:six:|[**Алгоритм Хаффмана** (Huffman Algorithm)**](https://github.com/architectv/information-security/tree/main/)|:o:|
 |:six:|[**LZW-сжатие** (LZW compression)**](https://github.com/architectv/information-security/tree/main/)|:o:|
 
