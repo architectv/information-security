@@ -3,7 +3,6 @@ package lzw
 import (
 	"fmt"
 	"strconv"
-	"strings"
 )
 
 const (
@@ -48,7 +47,7 @@ func Decompress(data []byte) []byte {
 		dictionary[i] = []byte{byte(i)}
 	}
 
-	var result strings.Builder
+	var result []byte
 	var w []byte
 	for _, k := range compressed {
 		var entry []byte
@@ -57,9 +56,9 @@ func Decompress(data []byte) []byte {
 		} else if k == dictSize && len(w) > 0 {
 			entry = append(w, w[0])
 		} else {
-			return []byte(result.String())
+			return result
 		}
-		result.Write(entry)
+		result = append(result, entry...)
 
 		if len(w) > 0 {
 			w = append(w, entry[0])
@@ -69,7 +68,7 @@ func Decompress(data []byte) []byte {
 		w = entry
 	}
 
-	return []byte(result.String())
+	return result
 }
 
 func toBytes(data []int64) []byte {
