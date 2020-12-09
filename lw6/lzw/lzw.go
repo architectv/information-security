@@ -10,6 +10,9 @@ const (
 )
 
 func Compress(data []byte) []byte {
+	if len(data) < 1 {
+		return []byte{}
+	}
 	dictSize := Bits
 	dictionary := make(map[string]int64, dictSize)
 	for i := int64(0); i < dictSize; i++ {
@@ -18,8 +21,7 @@ func Compress(data []byte) []byte {
 
 	var result []int64
 	var w []byte
-	for i := 0; i < len(data); i++ {
-		c := data[i]
+	for _, c := range data {
 		wc := append(w, c)
 		if _, ok := dictionary[string(wc)]; ok {
 			w = wc
@@ -27,8 +29,7 @@ func Compress(data []byte) []byte {
 			result = append(result, dictionary[string(w)])
 			dictionary[string(wc)] = dictSize
 			dictSize++
-			wc[0] = c
-			w = wc[:1]
+			w = []byte{c}
 		}
 	}
 
@@ -40,6 +41,9 @@ func Compress(data []byte) []byte {
 }
 
 func Decompress(data []byte) []byte {
+	if len(data) < 1 {
+		return []byte{}
+	}
 	compressed := fromBytes(data)
 	dictSize := Bits
 	dictionary := make(map[int64][]byte, dictSize)
@@ -56,7 +60,7 @@ func Decompress(data []byte) []byte {
 		} else if k == dictSize && len(w) > 0 {
 			entry = append(w, w[0])
 		} else {
-			return result
+			return []byte{}
 		}
 		result = append(result, entry...)
 
