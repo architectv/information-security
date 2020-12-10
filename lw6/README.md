@@ -9,7 +9,7 @@
 ```
 $ make build
 go build -o lzw-app main.go
-$ ./dsa-app
+$ ./lzw-app
 Usage: ./lzw-app file flag
 flag:
         s - compress file
