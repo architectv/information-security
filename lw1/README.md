@@ -26,7 +26,7 @@ Key selection criteria:
 
 ---
 
-## Пример / Example
+## Пример | Example
 
 ```
 $ ./app

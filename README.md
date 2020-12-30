@@ -15,4 +15,4 @@
 
 \* - DES / AES на выбор в л.р. #3 | DES / AES to choose from in lw #3
 
-\*\* - Алгоритм Хаффмана / LZW-сжатие на выбор в л.р. №6 | Huffman Algorithm / LZW compression to choose from in lw #6
+\*\* - Алгоритм Хаффмана / LZW-сжатие на выбор в л.р. #6 | Huffman Algorithm / LZW compression to choose from in lw #6

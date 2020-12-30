@@ -22,7 +22,7 @@ It uses 3 rotors and a reflector, the alphabet contains 256 characters.
 
 ---
 
-## Пример / Example
+## Пример | Example
 
 ```
 $ ls data
